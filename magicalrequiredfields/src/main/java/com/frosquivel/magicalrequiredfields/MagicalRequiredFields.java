@@ -31,16 +31,16 @@ public class MagicalRequiredFields {
      * @param validateMessage the mesagge to show  as an error in this components
      * @return a boolean, if is not have required fields empty, this return true, else this return false.
      */
-    public static boolean MagicalRequiredFields(List<View> views, String validateMessage) {
-        Collections.reverse(views);
-
+    public static boolean validateReq(List<View> views, String validateMessage) {
         boolean passedValidation = true;
 
         if(views!=null) {
             if (views.size() > 0) {
+                Collections.reverse(views);
                 for (View view : views) {
-                    passedValidation = validateErrorRegularViews(view, validateMessage);
-                    passedValidation = validateErrorImBarViews(view);
+
+                    passedValidation =validateErrorRegularViews(view, validateMessage, passedValidation);
+                    passedValidation = validateErrorImBarViews(view,passedValidation);
                 }
             }
         }
@@ -57,16 +57,17 @@ public class MagicalRequiredFields {
      * @param validateMessage the mesagge to show as an error in this components
      * @return a boolean, if is not have required fields empty, this return true, else this return false.
      */
-    public static boolean MagicalRequiredFields(List<View> views, List<List<View>> listViews, String validateMessage) {
-        Collections.reverse(views);
+    public static boolean validateReq(List<View> views, List<List<View>> listViews, String validateMessage) {
 
         boolean passedValidation = true;
 
         if(views!=null) {
             if (views.size() > 0) {
+                Collections.reverse(views);
                 for (View view : views) {
-                    passedValidation = validateErrorRegularViews(view, validateMessage);
-                    passedValidation = validateErrorImBarViews(view);
+                    passedValidation = validateErrorRegularViews(view, validateMessage,passedValidation);
+                    passedValidation = validateErrorImBarViews(view, passedValidation);
+
                 }
             }
         }
@@ -74,15 +75,12 @@ public class MagicalRequiredFields {
         if(listViews!=null){
             if(listViews.size()>0){
                 for (List<View> list : listViews) {
-                    passedValidation = true;
-
                     if(list!=null) {
                         if (list.size() > 0) {
-                            passedValidation = validateErrorRadioButton(list,validateMessage);
-                            passedValidation = validateErrorCheckBox(list,validateMessage);
+                            passedValidation = validateErrorRadioButton(list,validateMessage,passedValidation);
+                            passedValidation = validateErrorCheckBox(list, validateMessage, passedValidation);
                         }
                     }
-
                 }
             }
         }
@@ -98,38 +96,38 @@ public class MagicalRequiredFields {
      * @param validateMessage the mesagge to show as an error in this components
      * @return a boolean, if is not have required fields empty, this return true, else this return false.
      */
-    public static boolean validateErrorRegularViews(View view,String validateMessage){
+    private static boolean validateErrorRegularViews(View view,String validateMessage, boolean pPassedValidation){
 
-        boolean passedValidation = true;
+        boolean passedValidation = pPassedValidation;
         if(view!=null) {
-                if (view instanceof EditText) {
-                    if (((EditText) view).getText().toString().trim().equals("")) {
-                        ((EditText) view).setError(validateMessage);
-                        passedValidation = false;
-                    } else {
-                        ((EditText) view).setError(null);
-                    }
-                } else if (view instanceof Spinner) {
-
-                    if (((Spinner) view).getSelectedItemPosition() == 0) {
-                        ((TextView) ((Spinner) view).getSelectedView()).setError(validateMessage);
-                        passedValidation = false;
-                    }
-                } else if (view instanceof Switch) {
-
-                    if (!((Switch) view).isChecked()) {
-                        ((Switch) view).setError(validateMessage);
-                        passedValidation = false;
-                    }
-                } else if (view instanceof ToggleButton) {
-
-                    if (!((ToggleButton) view).isChecked()) {
-                        ((ToggleButton) view).setError(validateMessage);
-                        passedValidation = false;
-                    }
+            if (view instanceof EditText) {
+                if (((EditText) view).getText().toString().trim().equals("")) {
+                    ((EditText) view).setError(validateMessage);
+                    passedValidation = false;
+                } else {
+                    ((EditText) view).setError(null);
                 }
+            } else if (view instanceof Spinner) {
+
+                if (((Spinner) view).getSelectedItemPosition() == 0) {
+                    ((TextView) ((Spinner) view).getSelectedView()).setError(validateMessage);
+                    passedValidation = false;
+                }
+            } else if (view instanceof Switch) {
+
+                if (!((Switch) view).isChecked()) {
+                    ((Switch) view).setError(validateMessage);
+                    passedValidation = false;
+                }
+            } else if (view instanceof ToggleButton) {
+
+                if (!((ToggleButton) view).isChecked()) {
+                    ((ToggleButton) view).setError(validateMessage);
+                    passedValidation = false;
+                }
+            }
         }
-     return passedValidation;
+        return passedValidation;
     }
 
     /**
@@ -138,8 +136,8 @@ public class MagicalRequiredFields {
      * @param view A list of views of this GUI components
      * @return a boolean, if is not have required fields empty, this return true, else this return false.
      */
-    public static boolean validateErrorImBarViews(View view) {
-        boolean passedValidation = true;
+    private static boolean validateErrorImBarViews(View view, boolean pPassedValidation) {
+        boolean passedValidation = pPassedValidation;
         if(view!=null) {
             if (view instanceof ImageView) {
 
@@ -172,8 +170,8 @@ public class MagicalRequiredFields {
      * @param validateMessage the mesagge to show as an error in this components
      * @return a boolean, if is not have required fields empty, this return true, else this return false.
      */
-    public static boolean validateErrorRadioButton(List<View> views, String validateMessage) {
-        boolean passedValidation = true;
+    private static boolean validateErrorRadioButton(List<View> views, String validateMessage, boolean pPassedValidation) {
+        boolean passedValidation = pPassedValidation;
         int countChecked=0;
         View viewRadio=null;
 
@@ -189,7 +187,6 @@ public class MagicalRequiredFields {
                 }
 
                 if (countChecked > 0) {
-                    passedValidation = true;
                     ((RadioButton) viewRadio).setError(null);
                 } else {
                     passedValidation = false;
@@ -208,8 +205,8 @@ public class MagicalRequiredFields {
      * @param validateMessage the mesagge to show as an error in this components
      * @return a boolean, if is not have required fields empty, this return true, else this return false.
      */
-    public static boolean validateErrorCheckBox(List<View> views, String validateMessage) {
-        boolean passedValidation = true;
+    private static boolean validateErrorCheckBox(List<View> views, String validateMessage, boolean pPassedValidation) {
+        boolean passedValidation = pPassedValidation;
         int countChecked=0;
         View viewCheckBox=null;
 
@@ -225,7 +222,6 @@ public class MagicalRequiredFields {
                 }
 
                 if (countChecked > 0) {
-                    passedValidation = true;
                     ((CheckBox) viewCheckBox).setError(null);
                 } else {
                     passedValidation = false;

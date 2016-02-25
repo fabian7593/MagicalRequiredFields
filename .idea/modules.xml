@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MagicRequiredFields.iml" filepath="$PROJECT_DIR$/MagicRequiredFields.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/magicalRequiredFields.iml" filepath="$PROJECT_DIR$/magicalRequiredFields.iml" />
       <module fileurl="file://$PROJECT_DIR$/magicalrequiredfields/magicalrequiredfields.iml" filepath="$PROJECT_DIR$/magicalrequiredfields/magicalrequiredfields.iml" />
     </modules>
   </component>
