@@ -43,7 +43,7 @@ And you can add the jcenter bintray library in dependecies, like this:
 <br><br>
 ### How to use
 
-If you need to validate the components like a "required fields" this library is the heaven for you :D.
+If you need to validate the components like a "required fields" this library is the heaven for you :D.<br>
 You only need to download this example, or import the libraries in yoour project, but if you prefer it for fastest and easier add library to your project, you can use the gradle dependency, you have to add these lines in your build.gradle file:
 
 ```bash
@@ -60,7 +60,7 @@ dependencies {
 
 <br><br>
 ## Usage
-You only need to import the library for use this.
+You only need to import the library for use this.<br>
 The method of the library return false if any component have empty value or not pass the validate.
 <br>
 ####For example:
@@ -100,8 +100,8 @@ import com.frosquivel.magicalrequiredfields.MagicalRequiredFields;
 ```
 
 <br>
-The method of this example is static and you not have to create the instance of this.
-You need to pass as parameters the list of your views to validate, and the message if you need to show in the set error message.
+The method of this example is static and you not have to create the instance of this.<br>
+You need to pass as parameters the list of your views to validate, and the message if you need to show in the set error message.<br>
 ```bash
                 List<View> listObj = new ArrayList<View>();
                 listObj.add(yourEditText);
