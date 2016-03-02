@@ -67,11 +67,11 @@ The method of the library return false if any component have empty value or not 
 If your have a EditText and you validate it, with this library,and you not entry any value, the method return false, but if you entry any value the method return true.<br>
 
 ####Description Example
-This example have some of the components that's the app supports. In this time are 
-*EditText
-*Spinner
-*RadioButton
-*CheckBox 
+This example have some of the components that's the app supports. In this time are <br>
+*EditText <br>
+*Spinner <br>
+*RadioButton <br>
+*CheckBox <br>
 
 
 ####Code Implementation
