@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 List<View> listObj = new ArrayList<View>();
                 listObj.add(editText);
                 listObj.add(spinner);
@@ -91,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
                 listObjRadioGroup.add(radio2);
 
                 List<View> listObjCheckBoxGroup = new ArrayList<View>();
-                listObjRadioGroup.add(checkBox1);
-                listObjRadioGroup.add(checkBox2);
+                listObjCheckBoxGroup.add(checkBox1);
+                listObjCheckBoxGroup.add(checkBox2);
 
                 List<List<View>> listOfListViewsGroup = new ArrayList<List<View>>();
                 listOfListViewsGroup.add(listObjRadioGroup);
