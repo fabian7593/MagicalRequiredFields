@@ -3,16 +3,16 @@
 An library easy-to-use of required fields in Android, this library validate the most important native Gui components of Android.
 
 This library supports these components:<br>
-*EditText<br>
-*Spinner<br>
-*RadioButton<br>
-*CheckBox<br>
-*Switch<br>
-*ToggleButton<br>
-*RatingBar<br>
-*ImageView<br>
-*SeekBar<br>
-*ProgressBar<br>
+* EditText<br>
+* Spinner<br>
+* RadioButton<br>
+* CheckBox<br>
+* Switch<br>
+* ToggleButton<br>
+* RatingBar<br>
+* ImageView<br>
+* SeekBar<br>
+* ProgressBar<br>
 
 <br><br>
 
