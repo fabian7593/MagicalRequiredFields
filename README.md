@@ -156,7 +156,7 @@ All the code has a internal documentation for more explanation of this example.
 
 <br><br>
 ##Preview of Example
-![alt tag](https://github.com/fabian7593/Scroll-Infinite-ListView-Plugin/blob/master/video.gif)
+![alt tag](https://github.com/fabian7593/MagicalRequiredFields/blob/master/magicalrequiredfields.gif)
 
 
 <br><br>
