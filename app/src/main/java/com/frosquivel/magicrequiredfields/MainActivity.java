@@ -15,7 +15,13 @@ import com.frosquivel.magicalrequiredfields.MagicalRequiredFields;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Created by          Fabián Rosales Esquivel
+ * Visit my web page   http://www.frosquivel.com
+ * Visit my blog       http://www.frosquivel.com/blog
+ * Created Date        on 2/15/16
+ * This is an example of use the MagicalRequiredFields library
+ */
 public class MainActivity extends AppCompatActivity {
 
     EditText editText;
